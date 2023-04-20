@@ -6,8 +6,10 @@ import WindowBar from './components/WindowBar'
 import CalculatorPad from './components/CalculatorPad'
 import CalculatorDisplay from './components/CalculatorDisplay'
 
+import './global.css'
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [displayValue, setDisplayValue] = useState('0')
 
   return (
     <Flex
@@ -29,9 +31,9 @@ function App() {
       >
         <WindowBar />
         <Flex></Flex>
-        <CalculatorDisplay />
+        <CalculatorDisplay displayValue={displayValue} />
         <Flex></Flex>
-        <CalculatorPad />
+        <CalculatorPad /*displayValue={displayValue}*/ setDisplayValue={setDisplayValue} />
       </Flex>
     </Flex>
   )

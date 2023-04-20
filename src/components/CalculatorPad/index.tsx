@@ -3,7 +3,13 @@ import {
     Button,
 } from '@chakra-ui/react'
 
-export default function CalculatorPad() {
+export default function CalculatorPad({
+    // displayValue,
+    setDisplayValue,
+} : {
+    // displayValue: string;
+    setDisplayValue: (value: string) => void;
+}) {
     return (
         <Flex
             h="65%"
@@ -13,281 +19,84 @@ export default function CalculatorPad() {
             gap="2px"
             color="#f8e4e3"
         >
-            <Flex
-                h="100%"
-                w="100%"
-                gap="2px"
-                justify="spaced-between"
-                align="center"
-            >
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+            <Flex className='calcPadRow'>
+                <Button className='darkButton'>
                     %
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+                <Button className='darkButton'>
                     CE
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+                <Button className='darkButton'>
                     C
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+                <Button className='darkButton'>
                     Backspace
                 </Button>
             </Flex>
-            <Flex
-                h="100%"
-                w="100%"
-                gap="2px"
-                justify="spaced-between"
-                align="center"
-            >
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+            <Flex className='calcPadRow'>
+                <Button className='darkButton'>
                     1/x
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+                <Button className='darkButton'>
                     x²
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+                <Button className='darkButton'>
                     Sqrrt(x)
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+                <Button className='darkButton'>
                     /
                 </Button>
             </Flex>
-            <Flex
-                h="100%"
-                w="100%"
-                gap="2px"
-                justify="spaced-between"
-                align="center"
-            >
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+            <Flex className='calcPadRow'>
+                <Button className='lightButton'>
                     7
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+                <Button className='lightButton'>
                     8
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+                <Button className='lightButton'>
                     9
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+                <Button className='darkButton'>
                     X
                 </Button>
             </Flex>
-            <Flex
-                h="100%"
-                w="100%"
-                gap="2px"
-                justify="spaced-between"
-                align="center"
-            >
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+            <Flex className='calcPadRow'>
+                <Button className='lightButton'>
                     4
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+                <Button className='lightButton'>
                     5
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+                <Button className='lightButton'>
                     6
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+                <Button className='darkButton'>
                     -
                 </Button>
             </Flex>
-            <Flex
-                h="100%"
-                w="100%"
-                gap="2px"
-                justify="spaced-between"
-                align="center"
-            >
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+            <Flex className='calcPadRow'>
+                <Button className='lightButton'>
                     1
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+                <Button className='lightButton'>
                     2
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+                <Button className='lightButton'>
                     3
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#323232"
-                    _hover={{
-                        backgroundColor: "#3c3c3c",
-                    }}
-                >
+                <Button className='darkButton'>
                     +
                 </Button>
             </Flex>
-            <Flex
-                h="100%"
-                w="100%"
-                gap="2px"
-                justify="spaced-between"
-                align="center"
-            >
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+            <Flex className='calcPadRow'>
+                <Button className='lightButton'>
                     +/-
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+                <Button className='lightButton'>
                     0
                 </Button>
-                <Button
-                    h="100%"
-                    w="100%"
-                    bgColor="#3c3c3c"
-                    _hover={{
-                        backgroundColor: "#323232",
-                    }}
-                >
+                <Button className='lightButton'>
                     ,
                 </Button>
                 <Button
@@ -295,6 +104,9 @@ export default function CalculatorPad() {
                     w="100%"
                     color="#3c3c3c"
                     bgColor="#4CC2FF"
+                    _hover={{
+                        bgColor: "#47b1e8",
+                    }}
                 >
                     =
                 </Button>
