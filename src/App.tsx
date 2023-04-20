@@ -1,7 +1,7 @@
 import {
   Flex,
 } from '@chakra-ui/react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import WindowBar from './components/WindowBar'
 import CalculatorPad from './components/CalculatorPad'
 import CalculatorDisplay from './components/CalculatorDisplay'
@@ -9,7 +9,19 @@ import CalculatorDisplay from './components/CalculatorDisplay'
 import './global.css'
 
 function App() {
-  const [displayValue, setDisplayValue] = useState('0')
+  const [displayValue, setDisplayValue] = useState(String(0))
+
+  function formatDisplay(value: string) {
+    const newDisplay = value.split('').reverse()
+    // newDisplay.splice(3, 0, '.')
+    console.log(newDisplay)
+    return newDisplay.reverse().join('')
+  }
+
+  useEffect(() => {
+    setDisplayValue(formatDisplay(displayValue))
+    console.log("lenght",displayValue.length)
+  }, [displayValue])
 
   return (
     <Flex
@@ -33,7 +45,7 @@ function App() {
         <Flex></Flex>
         <CalculatorDisplay displayValue={displayValue} />
         <Flex></Flex>
-        <CalculatorPad /*displayValue={displayValue}*/ setDisplayValue={setDisplayValue} />
+        <CalculatorPad displayValue={displayValue} setDisplayValue={setDisplayValue} />
       </Flex>
     </Flex>
   )
