@@ -6,9 +6,13 @@ import {
 export default function CalculatorPad({
     displayValue,
     setDisplayValue,
+    setOperator,
+    setMemoryValue,
 } : {
     displayValue: string;
     setDisplayValue: (value: string) => void;
+    setOperator: (value: string) => void;
+    setMemoryValue: (value: string) => void;
 }) {
     return (
         <Flex
@@ -27,6 +31,9 @@ export default function CalculatorPad({
                 </Button>
                 <Button
                     className='darkButton'
+                    onClick={() => {
+                        setDisplayValue('0')
+                    }}
                 >
                     CE
                 </Button>
@@ -40,6 +47,11 @@ export default function CalculatorPad({
                 </Button>
                 <Button
                     className='darkButton'
+                    onClick={() => {
+                        displayValue.split('').length > 1 ?
+                        setDisplayValue(displayValue.slice(0, -1)) :
+                        setDisplayValue('0')
+                    }}
                 >
                     Backspace
                 </Button>
@@ -47,18 +59,28 @@ export default function CalculatorPad({
             <Flex className='calcPadRow'>
                 <Button
                     className='darkButton'
+                    onClick={() => {
+                        setDisplayValue(String(1 / Number(displayValue)))
+                    }}
                 >
                     1/x
                 </Button>
                 <Button
                     className='darkButton'
+                    onClick={() => {
+                        setDisplayValue(String(Number(displayValue) ** 2))
+                    }}
                 >
                     x²
                 </Button>
                 <Button
                     className='darkButton'
+                    onClick={() => {
+                        setMemoryValue(`√${displayValue} =`)
+                        setDisplayValue(String(Math.sqrt(Number(displayValue))))
+                    }}
                 >
-                    Sqrrt(x)
+                    √x
                 </Button>
                 <Button
                     className='darkButton'
@@ -70,7 +92,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('7') :
                         setDisplayValue(displayValue + '7')
@@ -81,7 +103,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('8') :
                         setDisplayValue(displayValue + '8')
@@ -92,7 +114,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('9') :
                         setDisplayValue(displayValue + '9')
@@ -110,7 +132,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('4') :
                         setDisplayValue(displayValue + '4')
@@ -121,7 +143,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('5') :
                         setDisplayValue(displayValue + '5')
@@ -132,7 +154,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('6') :
                         setDisplayValue(displayValue + '6')
@@ -150,7 +172,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('1') :
                         setDisplayValue(displayValue + '1')
@@ -161,7 +183,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('2') :
                         setDisplayValue(displayValue + '2')
@@ -172,7 +194,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('3') :
                         setDisplayValue(displayValue + '3')
@@ -195,7 +217,7 @@ export default function CalculatorPad({
                 <Button
                     className='lightButton'
                     onClick={() => {
-                        if (displayValue.length <= 21) {
+                        if (displayValue.length <= 17) {
                         displayValue === '0' ?
                         setDisplayValue('0') :
                         setDisplayValue(displayValue + '0')
