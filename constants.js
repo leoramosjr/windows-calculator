@@ -1,0 +1,28 @@
+const CALCULATOR_KEYS = [
+  { label: "%", action: "percent", type: "utility" },
+  { label: "CE", action: "clear-entry", type: "utility" },
+  { label: "C", action: "clear", type: "utility" },
+  { label: "⌫", action: "backspace", type: "utility", ariaLabel: "Apagar último dígito" },
+  { label: "1/x", action: "reciprocal", type: "function" },
+  { label: "x²", action: "square", type: "function" },
+  { label: "√x", action: "sqrt", type: "function" },
+  { label: "÷", action: "operator", value: "/", type: "operator" },
+  { label: "7", action: "digit", value: "7" },
+  { label: "8", action: "digit", value: "8" },
+  { label: "9", action: "digit", value: "9" },
+  { label: "×", action: "operator", value: "*", type: "operator" },
+  { label: "4", action: "digit", value: "4" },
+  { label: "5", action: "digit", value: "5" },
+  { label: "6", action: "digit", value: "6" },
+  { label: "−", action: "operator", value: "-", type: "operator" },
+  { label: "1", action: "digit", value: "1" },
+  { label: "2", action: "digit", value: "2" },
+  { label: "3", action: "digit", value: "3" },
+  { label: "+", action: "operator", value: "+", type: "operator" },
+  { label: "+/−", action: "sign", type: "function" },
+  { label: "0", action: "digit", value: "0" },
+  { label: ",", action: "decimal", type: "function" },
+  { label: "=", action: "equals", type: "equals" },
+];
+
+const OPERATOR_SYMBOLS = { "+": "+", "-": "−", "*": "×", "/": "÷" };

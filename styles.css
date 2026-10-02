@@ -1,0 +1,141 @@
+body {
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: #2e3345;
+  color: #f8e4e3;
+  font-family: "Segoe UI", sans-serif;
+}
+
+#calculator {
+  height: 800px;
+  width: 500px;
+  display: flex;
+  overflow: hidden;
+  background-color: #21201f;
+  border-radius: 8px;
+  border: 1px solid #44464e;
+  box-shadow: 0 0 10px 0 #04060e;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#header {
+  height: 35px;
+  wdith: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#calculatorTitle {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+#calculatorTitle div {
+  font-size: 14px;
+}
+
+#calculatorTitle img {
+  height: 18px;
+  width: auto;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+#headerButtonsContainer {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0rem;
+}
+
+#headerButtonsContainer > :first-child {
+  font-size: 30px;
+}
+
+.headerButtons {
+  color: #f8e4e3;
+  height: 35px;
+  width: 50px;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 22px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.1s ease-in-out;
+  &:hover {
+    background-color: #363636;
+  }
+}
+
+#closeButton {
+  &:hover {
+    background-color: #c42b1c;
+  }
+}
+
+#keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  padding: 4px;
+}
+
+#display {
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 64px 12px 0;
+  overflow: hidden;
+}
+
+#historyText {
+  min-height: 22px;
+  color: #aaa;
+  font-size: 14px;
+  text-align: right;
+}
+
+#displayText {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 48px;
+  line-height: 1.1;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.padButtons {
+  cursor: pointer;
+  color: #f8e4e3;
+  height: 84px;
+  width: 100%;
+  border: none;
+  background-color: #323232;
+  &:hover {
+    background-color: #3c3c3c;
+  }
+}
+
+.padButtons:last-child {
+  color: #3c3c3c;
+  background-color: #4cc2ff;
+  &:hover {
+    background-color: #47b1e8;
+  }
+}

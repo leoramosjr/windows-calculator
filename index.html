@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="./assets/calculatorIcon.png" />
+    <meta property="og:image" content="./assets/calculatorIcon.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="./assets/calculatorIcon.png" />
+    <title>Windows Calculator</title>
+  </head>
+  <body>
+    <div id="calculator">
+      <div id="header">
+        <div id="calculatorTitle">
+          <img src="./assets/calculatorIcon.png" alt="Calculator Icon" />
+          <div>Calculadora</div>
+        </div>
+        <div id="headerButtonsContainer">
+          <button class="headerButtons">-</button>
+          <button class="headerButtons">□</button>
+          <a
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D"
+            class="headerButtons"
+            id="closeButton"
+            target="_blank"
+            >×</a
+          >
+        </div>
+      </div>
+      <div id="display">
+        <div id="historyText" aria-live="polite"></div>
+        <div id="displayText" aria-live="polite">0</div>
+      </div>
+      <div id="keyboard"></div>
+    </div>
+  </body>
+  <script src="constants.js"></script>
+  <script src="script.js"></script>
+</html>
